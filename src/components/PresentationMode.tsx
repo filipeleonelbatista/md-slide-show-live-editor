@@ -67,6 +67,7 @@ const PresentationMode: React.FC<PresentationModeProps> = ({ slides, onClose, th
         </div>
       </div>
       <button
+        title="Close Presentation"
         onClick={onClose}
         className="absolute top-4 right-4 text-2xl text-gray-600 dark:text-gray-400"
       >

@@ -67,9 +67,9 @@ const Preview: React.FC<PreviewProps> = ({ markdown, currentSlide, onPrevSlide, 
       </div>
       <div className="absolute bottom-0 right-0 w-full text-gray-500 dark:text-gray-400">
         <div className="dark:bg-gray-800 flex items-center justify-between p-2">
-          <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} onClick={onPrevSlide}>Anterior</Button>
-          <span className="dark:text-white">Slide {currentSlide + 1} de {slides.length}</span>
-          <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} onClick={onNextSlide}>Próximo</Button>
+          <Button title="Previous" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} onClick={onPrevSlide}>Previous</Button>
+          <span className="dark:text-white">Slide {currentSlide + 1} from {slides.length}</span>
+          <Button title="Next" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} onClick={onNextSlide}>Next</Button>
         </div>
       </div>
     </div>

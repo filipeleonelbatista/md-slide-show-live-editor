@@ -28,10 +28,10 @@ const FileOperations: React.FC<FileOperationsProps> = ({ onSave, onLoad, darkMod
 
   return (
     <div className="flex space-x-2">
-      <Button onClick={handleSave} size="icon" className={`${darkMode ? 'bg-green-700 hover:bg-green-500' : 'bg-green-500 hover:bg-green-700'}  text-white rounded`} title="Salvar">
+      <Button onClick={handleSave} size="icon" className={`${darkMode ? 'bg-green-700 hover:bg-green-500' : 'bg-green-500 hover:bg-green-700'}  text-white rounded`} title="Save">
         <Save className="h-4 w-4" />
       </Button>
-      <Button variant="outline"  className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={() => document.getElementById('file-input')?.click()} title="Carregar">
+      <Button variant="outline"  className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={() => document.getElementById('file-input')?.click()} title="Upload">
         <Upload className="h-4 w-4" />
       </Button>
       <input

@@ -14,7 +14,7 @@ import { Theme, themes } from './themes'
 
 
 const App: React.FC = () => {
-  const [markdown, setMarkdown] = useState('# Bem-vindo ao Editor de Slides\n\n---\n\n## Slide 1\n\nEste é o primeiro slide.\n\n---\n\n## Slide 2\n\nEste é o segundo slide.')
+  const [markdown, setMarkdown] = useState('# Welcome to the Slideshow Live Editor\n\n---\n\n## Slide 1\n\nThis is the first slide.\n\n---\n\n## Slide 2\n\nThis is the second slide.')
   const [currentSlide, setCurrentSlide] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
   const [presentationMode, setPresentationMode] = useState(false)
@@ -75,13 +75,16 @@ const App: React.FC = () => {
       )}
 
       <header className="bg-gray-300 dark:bg-gray-950 p-2 gap-2 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Markdown Slide Editor</h1>
+        <div className="flex items-center gap-2">
+          <img src="/logo.png" alt="Slideshow Live Editor" className="h-8 w-8" />
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Slideshow Live Editor</h1>
+        </div>
         <div className="flex justify-start items-center gap-2 ml-auto">
           <FileOperations onSave={handleSave} onLoad={handleLoad} darkMode={darkMode} />
           <ExportPDF slides={slides} darkMode={darkMode} />
-          <Select onValueChange={(value) => setCurrentTheme(themes.find(theme => theme.name === value) || themes[0])}>
+          <Select  onValueChange={(value) => setCurrentTheme(themes.find(theme => theme.name === value) || themes[0])}>
             <SelectTrigger className={`w-[180px] bg-gray-200 dark:bg-gray-800 border dark:border-gray-600 [&>span]:text-gray-800 dark:[&>span]:text-gray-100`}>
-              <SelectValue placeholder="Selecione um tema" />
+              <SelectValue placeholder="Select a style" />
             </SelectTrigger>
             <SelectContent className="bg-white dark:bg-gray-800 border dark:border-gray-700">
               {themes.map(theme => (
@@ -95,11 +98,12 @@ const App: React.FC = () => {
               ))}
             </SelectContent>
           </Select>
-          <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={togglePresentationMode}>
+          <Button title="Start presentation" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={togglePresentationMode}>
             <Presentation className="h-4 w-4" />
           </Button>
         </div>
         <button
+          title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           onClick={toggleDarkMode}
           className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
         >

@@ -24,7 +24,7 @@ const ExportPDF: React.FC<ExportPDFProps> = ({ slides, darkMode }) => {
   };
 
   return (
-    <Button variant="outline" size="icon" onClick={exportToPDF} title="Exportar PDF" className={darkMode ? 'border-gray-600 text-gray-300' : ''}>
+    <Button variant="outline" size="icon" onClick={exportToPDF} title="Export PDF" className={darkMode ? 'border-gray-600 text-gray-300' : ''}>
       <FileOutput className="h-4 w-4" />
     </Button>
   );

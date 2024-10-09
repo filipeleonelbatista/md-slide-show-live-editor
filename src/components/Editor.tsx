@@ -67,38 +67,38 @@ const Editor: React.FC<EditorProps> = ({ markdown, onChange, darkMode }) => {
   return (
     <div className="h-full w-full flex flex-col">
       <div className="w-full bg-gray-300 dark:bg-gray-950 p-2 flex flex-wrap space-x-2">
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(1)}>
+        <Button title="Heading 1" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(1)}>
           H1
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(2)}>
+        <Button title="Heading 2" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(2)}>
           H2
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(3)}>
+        <Button title="Heading 3" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={() => addHeader(3)}>
           H3
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={addBold}>
+        <Button title="Bold" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' font-bold'} size="icon" onClick={addBold}>
           B
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' italic'} size="icon" onClick={addItalic}>
-          I
+        <Button title="Italic"  variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : '' + ' italic'} size="icon" onClick={addItalic}>
+          <i>I</i>
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addLink}>
-          <Link />
+        <Button title="Link" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addLink}>
+          <Link className='w-4 h-4' />
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addList}>
-          <List />
+        <Button title="Unordered list" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addList}>
+          <List className='w-4 h-4'/>
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addOrderedList}>
-          <ListOrdered />
+        <Button title="Ordered List" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addOrderedList}>
+          <ListOrdered className='w-4 h-4'/>
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addQuote}>
-          <QuoteIcon />
+        <Button title="Quote block" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addQuote}>
+          <QuoteIcon className='w-4 h-4'/>
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addCode}>
-          <Code2 />
+        <Button title="Code Block" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addCode}>
+          <Code2 className='w-4 h-4'/>
         </Button>
-        <Button variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addImage}>
-          <LucideImage />
+        <Button title="Image" variant="outline" className={darkMode ? 'border-gray-600 text-gray-300' : ''} size="icon" onClick={addImage}>
+          <LucideImage className='w-4 h-4'/>
         </Button>
       </div>
 
